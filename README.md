@@ -17,7 +17,7 @@ This program was designed to be started via inittab on boot like this:
 
 This will launch the browser in fullscreen mode and load the resource at `URL`.
 `URL` can be anything that WebKit supports, including `file://`-URLs for local webpages and documents.
-Omitting `URL` shows the default page "about:blank".
+Omitting `URL` shows the default page, this README.
 
 The following keybindings exist:
   - `F5` for reloading the current page

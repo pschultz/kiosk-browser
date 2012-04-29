@@ -14,7 +14,7 @@ void unmaximize();
 
 static WebKitWebView* web_view;
 static GtkWidget *window;
-static gchar* defaultUrl = "about:blank";
+gchar* default_url = "https://github.com/pschultz/kiosk-browser/blob/master/README.md";
 
 int main(int argc, char** argv) {
   gtk_init(&argc, &argv);
@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
     webkit_web_view_load_uri(web_view, argv[1]);
   }
   else {
-    webkit_web_view_load_uri(web_view, defaultUrl);
+    webkit_web_view_load_uri(web_view, default_url);
   }
 
   maximize();
