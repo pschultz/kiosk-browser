@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.min.js'></script>
+    <script type='text/javascript'>
+      var i = 0;
+      $(function() {
+        window.setInterval(function() { $("#timer-content").text(++i); }, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id='timer-content'>0</h1>
+  </body>
+</html>
