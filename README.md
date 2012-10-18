@@ -7,6 +7,11 @@ while being highly portable, especially to the arm11 architecture (used for the 
     # OR: yum install webkitgtk-devel
     make
 
+## webkitgtk3
+Building against webkitgtk3 is also possible like this:
+
+    make GKT_VERSION=3.0
+
 # INSTALLING
 No special steps are required for installation. Just execute `browser`.
 This program was designed to be started via inittab on boot like this:

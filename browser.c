@@ -16,6 +16,14 @@ static WebKitWebView* web_view;
 static GtkWidget *window;
 gchar* default_url = "https://github.com/pschultz/kiosk-browser/blob/master/README.md";
 
+#ifndef GDK_KEY_F5
+#define GDK_KEY_F5 GDK_F5
+#endif
+
+#ifndef GDK_KEY_F11
+#define GDK_KEY_F11 GDK_F11
+#endif
+
 int main(int argc, char** argv) {
   gtk_init(&argc, &argv);
 
@@ -46,10 +54,10 @@ int main(int argc, char** argv) {
 }
 
 gboolean on_key_press(GtkWidget* window, GdkEventKey* key, gpointer userdata) {
-  if(key->type == GDK_KEY_PRESS && key->keyval == GDK_F5) {
+  if(key->type == GDK_KEY_PRESS && key->keyval == GDK_KEY_F5) {
     reload_browser(0);
   }
-  else if(key->type == GDK_KEY_PRESS && key->keyval == GDK_F11) {
+  else if(key->type == GDK_KEY_PRESS && key->keyval == GDK_KEY_F11) {
     toggle_fullscreen(0);
   }
 
