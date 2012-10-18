@@ -10,6 +10,7 @@ while being highly portable, especially to the arm11 architecture (used for the 
 # INSTALLING
 No special steps are required for installation. Just execute `browser`.
 This program was designed to be started via inittab on boot like this:
+
     1:2345:respawn:/usr/bin/startx -e /usr/bin/browser http://10.0.0.5/zfs/monitor tty1 </dev/tty1 >/dev/tty1 2>&1
 
 # USAGE
