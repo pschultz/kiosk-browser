@@ -14,12 +14,15 @@ void unmaximize();
 
 static WebKitWebView* web_view;
 static GtkWidget *window;
+static GtkWidget *scrolledWindow;
+
 gchar* default_url = "https://github.com/pschultz/kiosk-browser/blob/master/README.md";
 
 int main(int argc, char** argv) {
   gtk_init(&argc, &argv);
 
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+  scrolledWindow = gtk_scrolled_window_new(NULL,NULL);
 
   g_signal_connect(window, "key-press-event", G_CALLBACK(on_key_press), NULL);
   g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
@@ -29,7 +32,8 @@ int main(int argc, char** argv) {
   signal(SIGHUP, reload_browser);
   signal(SIGUSR1, toggle_fullscreen);
 
-  gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(web_view));
+  gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(scrolledWindow));
+  gtk_container_add(GTK_CONTAINER(scrolledWindow), GTK_WIDGET(web_view));
 
   if(argc > 1) {
     webkit_web_view_load_uri(web_view, argv[1]);
