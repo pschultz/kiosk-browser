@@ -27,3 +27,7 @@ The following keybindings exist:
 These actions are also implemented as signal handlers:
   - `HUP` for reload
   - `USR1` for fullscreen toggle
+
+# Variants
+
+There is a variant that includes the scrollbar in the "feature/scrollbar" branch. Thanks @flottokarotto.
