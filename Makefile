@@ -10,7 +10,7 @@ LDFLAGS=$(shell pkg-config --libs gtk+-2.0 webkit-1.0)
 all: $(PROGRAM)
 
 browser: $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $(PROGRAM)
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $(PROGRAM)
 
 clean:
 	rm -rf $(OBJECTS) $(PROGRAM)
